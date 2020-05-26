@@ -1,6 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux'
+import  {obtenerProductosAction} from '../actions/productosActions'
+import Producto from './producto';
 
 const Productos = () => {
+    const dispatch = useDispatch();
+
+    const obtenerProductos = () => dispatch(obtenerProductosAction());
+    const productos = useSelector(state => state.productos.productos);
+
+    const cargando = useSelector(state => state.productos.loading)
+    const error =  useSelector(state => state.productos.error)
+
+    useEffect(() => {
+        obtenerProductos();
+    }, [])
+
     return ( 
         <section className="section">
         
@@ -12,21 +27,20 @@ const Productos = () => {
                     <div className="content">
                         <table className="table is-hoverable is-stripped">
                             <thead>
-                                <th>Nombre</th>
-                                <th>Precio</th>
-                                <th>Acciones</th>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Precio</td>
+                                    <td>Acciones</td>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        algo
-                                    </td>
-                                    <td>
-                                        ALGO MAS
-                                    </td>
-                                </tr>
+                                {productos.length === 0 ? <tr><td>No hay productos</td></tr> : productos.map((producto) => (
+                                    <Producto key={producto.id} producto = {producto}/>
+                                ))}
                             </tbody>
                         </table>
+                        { cargando ? <p>Cargando...</p> : null}
+                        { error ? <div className="notification is-danger">Hubo un error</div> : null}
                     </div>
                 </div>
             </div>

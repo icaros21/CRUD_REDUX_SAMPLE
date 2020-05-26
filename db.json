@@ -1,0 +1,54 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "Jugo de Naranja",
+      "precioProducto": "9991",
+      "id": 3
+    },
+    {
+      "nombreProducto": "Rib Eye 800g",
+      "precioProducto": "202",
+      "id": 4
+    },
+    {
+      "nombreProducto": "Jugo de Fresa",
+      "precioProducto": "200",
+      "id": 5
+    },
+    {
+      "nombreProducto": "Rib Eye",
+      "precioProducto": 800,
+      "id": 6
+    },
+    {
+      "nombreProducto": "Jugo de piña",
+      "precioProducto": 150,
+      "id": 7
+    },
+    {
+      "nombreProducto": "Jugo de arandano",
+      "precioProducto": 300,
+      "id": 8
+    },
+    {
+      "nombreProducto": "Mango",
+      "precioProducto": 12,
+      "id": 9
+    },
+    {
+      "nombreProducto": "Salsa",
+      "precioProducto": 30,
+      "id": 10
+    },
+    {
+      "nombreProducto": "Uno nuevo",
+      "precioProducto": 222,
+      "id": 11
+    },
+    {
+      "nombreProducto": "Uno mas nuevo",
+      "precioProducto": "433",
+      "id": 12
+    }
+  ]
+}
